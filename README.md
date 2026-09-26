@@ -2,7 +2,13 @@
 
 An applied data-science research project that adapts a multi-object cell-tracking workflow to Taiwan radar data and evaluates afternoon-thunderstorm events using radar, rain-gauge, satellite, and event records.
 
-> **Repository status:** This is a portfolio-oriented research summary. The underlying tracking system was adapted from the UK Met Office MO-cell-tracking codebase. Its upstream licensing and laboratory data-sharing permissions are still being confirmed, so the full modified source code and raw datasets are not included in this initial private release.
+## Research context and credit
+
+This research was conducted in **Professor Li-Pen Wang's (汪立本教授) research group in the Department of Civil Engineering at National Taiwan University**, with guidance from the laboratory's faculty and project team.
+
+The underlying rain-cell tracking system was **not developed from scratch by the author**. It is based on the UK Met Office's MO-cell-tracking codebase. My individual contributions focused on adapting and evaluating that existing system for Taiwan radar data, investigating tracking failures, modifying parts of the workflow, conducting parameter experiments, integrating multiple observational sources, and communicating the research results.
+
+> **Repository status:** This is a portfolio-oriented summary of work completed within the NTU research group. Upstream licensing and laboratory data-sharing permissions are still being confirmed, so the full modified source code and raw datasets are not included in this initial private release.
 
 ## Research question
 
@@ -64,11 +70,12 @@ Raw radar, satellite, rain-gauge, and laboratory data are not included. A future
 
 ## Attribution
 
-The tracking workflow was adapted from the UK Met Office MO-cell-tracking codebase for research use in Taiwan. This repository does not claim authorship of the upstream tracking system. The project contributions described here concern Taiwan-specific adaptation, data integration, failure analysis, fallback evaluation, parameter experiments, and research communication.
+This project was completed as part of research in Professor Li-Pen Wang's group at the Department of Civil Engineering, National Taiwan University. I am grateful to Professor Wang and the laboratory's project managers and research team for their supervision, domain knowledge, research direction, and collaborative support.
+
+The tracking workflow was adapted from the UK Met Office MO-cell-tracking codebase for research use in Taiwan. This repository does not claim authorship of the original tracking system or sole credit for the broader laboratory research. The individual contributions represented in this portfolio concern Taiwan-specific adaptation, selected code modifications, data integration, failure analysis, fallback evaluation, parameter experiments, visualization, and research communication.
 
 ## Author
 
 Cheng-Chi Wu  
 MEng in Data Science, UCLA  
 B.S. in Civil Engineering, National Taiwan University
-
