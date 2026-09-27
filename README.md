@@ -8,7 +8,7 @@ This research was conducted in **Professor Li-Pen Wang's (汪立本教授) resea
 
 The underlying rain-cell tracking system was **not developed from scratch by the author**. It is based on the UK Met Office's MO-cell-tracking codebase. My individual contributions focused on adapting and evaluating that existing system for Taiwan radar data, investigating tracking failures, modifying parts of the workflow, conducting parameter experiments, integrating multiple observational sources, and communicating the research results.
 
-> **Repository status:** This is a portfolio-oriented summary of work completed within the NTU research group. Upstream licensing and laboratory data-sharing permissions are still being confirmed, so the full modified source code and raw datasets are not included in this initial private release.
+> **Repository status:** This portfolio summary is shared with permission from the NTU research group. The full UK Met Office tracking engine is not redistributed because its upstream licensing remains separate from the laboratory's permission. Raw research datasets are also omitted from this portfolio release.
 
 ## Research question
 
@@ -90,7 +90,7 @@ These files are portfolio refactorings of research scripts, with hard-coded labo
 
 ## Reproducibility and data availability
 
-Raw radar, satellite, rain-gauge, and laboratory data are not included. A future public release will add a small authorized sample or synthetic dataset, reproducible analysis scripts, environment specifications, and tests after licensing and data-sharing review.
+Raw radar, satellite, and rain-gauge datasets are not included in this portfolio release. The included scripts operate on authorized local inputs and exported tracking results. A future update may add a small approved sample or synthetic dataset for reproducible demonstrations.
 
 ## Attribution
 
