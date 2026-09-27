@@ -64,6 +64,18 @@ The validation work exposed missing rain-gauge observations, temporal offsets, a
 
 The experiments show a recurring trade-off: relaxing association distance can recover more tracks but increases the risk of incorrect matching. A targeted, explicitly labeled fallback method preserves the stricter default matching logic while making exceptional cases measurable during later quality analysis.
 
+## Dataset scale
+
+The rain-gauge portion of the research dataset contains:
+
+- 2,803,229 observation rows across 194 daily CSV files
+- 113 unique stations
+- Observations from June 2021 through September 2023
+- 535,405 valid nonnegative rainfall measurements
+- 2,267,824 missing or invalid rainfall measurements, primarily encoded as `-998` or `-999`
+
+The high missing-observation rate was treated as a data-quality constraint during radar and rain-gauge validation. See the [rain-gauge data summary](docs/rain-gauge-data-summary.md) for distributions and limitations.
+
 ## Portfolio code
 
 The [`src`](src/) directory contains cleaned versions of the author's event-screening, visualization, and fallback-summary scripts. They operate on authorized local inputs and exported tracker results without reproducing the upstream Met Office tracking engine.
@@ -73,6 +85,16 @@ The [`src`](src/) directory contains cleaned versions of the author's event-scre
 - [`summarize_fallbacks.py`](src/summarize_fallbacks.py) calculates track and fallback usage statistics.
 
 These files are portfolio refactorings of research scripts, with hard-coded laboratory paths and raw-data copying removed.
+
+## Reproducible examples and tests
+
+The [`examples`](examples/) directory contains synthetic rain-gauge records and synthetic GeoJSON tracks. These files reproduce the expected schemas without exposing the full research dataset.
+
+Run the fallback-summary test with:
+
+```bash
+python -m unittest discover -s tests
+```
 
 ## Tools
 

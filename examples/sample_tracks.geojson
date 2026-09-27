@@ -1,0 +1,22 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"trackId": "synthetic-track-001", "fallback_used": false},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[121.50, 25.02], [121.52, 25.02], [121.52, 25.04], [121.50, 25.04], [121.50, 25.02]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"trackId": "synthetic-track-002", "fallback_used": true},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[121.55, 25.06], [121.57, 25.06], [121.57, 25.08], [121.55, 25.08], [121.55, 25.06]]]
+      }
+    }
+  ]
+}
+

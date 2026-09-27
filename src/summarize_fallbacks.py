@@ -3,10 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 from pathlib import Path
-
-import pandas as pd
 
 
 def summarize_file(path: Path) -> dict[str, object]:
@@ -41,12 +40,21 @@ def main() -> None:
     args = parser.parse_args()
 
     rows = [summarize_file(path) for path in sorted(args.input_dir.glob("*.json"))]
-    results = pd.DataFrame(rows)
     args.output_csv.parent.mkdir(parents=True, exist_ok=True)
-    results.to_csv(args.output_csv, index=False)
-    print(results.to_string(index=False))
+    fieldnames = [
+        "file",
+        "feature_count",
+        "unique_track_count",
+        "fallback_track_count",
+        "fallback_track_rate",
+    ]
+    with args.output_csv.open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    for row in rows:
+        print(row)
 
 
 if __name__ == "__main__":
     main()
-
