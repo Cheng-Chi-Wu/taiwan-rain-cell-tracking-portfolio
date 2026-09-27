@@ -36,9 +36,23 @@ Afternoon thunderstorms in Taiwan are spatially localized, short-lived, and inte
 
 ## Selected results
 
+The homepage intentionally shows a small set of representative outputs rather than every experiment in the full research presentation.
+
 ### Rain-cell detection and mapping
 
 ![Rain-cell tracking result](docs/images/rain-cell-result.png)
+
+### Track evolution through time
+
+![Animated rain-cell tracks](docs/images/rain-cell-tracking.gif)
+
+The animation shows exported cell polygons and track continuity across consecutive 10-minute radar frames.
+
+### Radar and rain-gauge validation
+
+![Radar and rain-gauge comparison](docs/images/radar-rain-gauge-comparison.png)
+
+The validation work exposed missing rain-gauge observations, temporal offsets, and differences between radar-derived intensity and station measurements. These limitations were treated as analysis findings rather than hidden during preprocessing.
 
 ### Parameter and fallback evaluation
 
@@ -49,6 +63,16 @@ Afternoon thunderstorms in Taiwan are spatially localized, short-lived, and inte
 ![Satellite comparison](docs/images/satellite-comparison.png)
 
 The experiments show a recurring trade-off: relaxing association distance can recover more tracks but increases the risk of incorrect matching. A targeted, explicitly labeled fallback method preserves the stricter default matching logic while making exceptional cases measurable during later quality analysis.
+
+## Portfolio code
+
+The [`src`](src/) directory contains cleaned versions of the author's event-screening, visualization, and fallback-summary scripts. They operate on authorized local inputs and exported tracker results without reproducing the upstream Met Office tracking engine.
+
+- [`select_events.py`](src/select_events.py) screens HDF5 radar frames for sustained high-reflectivity events.
+- [`visualize_tracks.py`](src/visualize_tracks.py) renders exported GeoJSON tracks and animations.
+- [`summarize_fallbacks.py`](src/summarize_fallbacks.py) calculates track and fallback usage statistics.
+
+These files are portfolio refactorings of research scripts, with hard-coded laboratory paths and raw-data copying removed.
 
 ## Tools
 
